@@ -14,7 +14,7 @@ const singleService = ({service}) => {
                     <p className="card-text">{description}</p>
                     <p className='fw-bold'>Fees : ${price}</p>
                     <div className=''>
-                    <Link to='services' className='btn btn-light'>Book Now</Link>
+                    <Link to='/checkout' className='btn btn-light'>Book Now</Link>
                     </div>
                 </div>
             </div>

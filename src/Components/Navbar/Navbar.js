@@ -27,7 +27,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <span className="mx-2">
-                        <CustomLink className="text-light nav-link" to='/cart'>Cart</CustomLink>
+                        <CustomLink className="text-light nav-link" to='/cart'>Checkout</CustomLink>
                     </span>
                     <span className="navbar-text">
                     <Link className="nav-link bg-light text-dark" to='/login'>Login</Link>

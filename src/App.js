@@ -5,6 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home/Home';
 import Services from './Components/Services/Services';
 import Footer from './Components/Footer/Footer';
+import Register from './Components/Register/Register';
+import RequireAuth from './RequireAuth/RequireAuth';
+import Checkout from './Components/Checkout/Checkout';
 
 function App() {
   return (
@@ -15,8 +18,12 @@ function App() {
         <Route path='/services' element={<Services></Services>}></Route>
         <Route path='/blog' element={<p>blog</p>}></Route>
         <Route path='/aboutme' element={<p>about me</p>}></Route>
-        <Route path='/cart' element={<p>cart</p>}></Route>
-        <Route path='/login' element={<p>login</p>}></Route>
+        <Route path='/checkout' element={
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>
+        }></Route>
+        <Route path='/login' element={<Register></Register>}></Route>
         <Route path='/*' element={<p>not found</p>}></Route>
       </Routes>
       <Footer></Footer>
