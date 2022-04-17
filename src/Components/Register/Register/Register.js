@@ -6,16 +6,6 @@ import auth from '../../../Firebase/Firebase.init';
 
 const Register = () => {
 
-    const [login, setLogin] = useState(false);
-
-    /* const [registerUser, setRegisterUser] = useState({
-        email:'',
-        password:'',
-        confirmPassword:''
-    }); */
-
-    /* const [confirmError, setConfirmError] = useState('') */
-
     const [
         createUserWithEmailAndPassword,
         user,
@@ -23,56 +13,18 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
-      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
-    const navigate = useNavigate();
-    const navigateLogin = () => {
-        navigate('/login');
-    }
-
-    if(loading || updating){
-        return <p>Loading...</p>
-    }
-
-    /* const handleFormInput = (event)=>{
-        registerUser[event.target.name] = event.target.value;
-    }
-
-
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-
-        if(!login){
-
-            if(registerUser.password !== registerUser.confirmPassword){
-                setConfirmError('Your passwords do not match!');
-                return;
-            }
-            setConfirmError('')
-            createUserWithEmailAndPassword(registerUser.email, registerUser.password)
-        }
-
-        console.log(registerUser);
-    } */
-
-    const handleRegister = async (event) => {
+    const handleRegister = event =>{
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        // const agree = event.target.terms.checked;
-
-        await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: name });
-        console.log('Updated profile');
-        navigate('/');
+        const confirmPassword = event.target.confirmPassword.value;
     }
-
 
     return (
         <div className='container'>
             <div className=''>
-            <form className='w-50 mx-auto mt-5 border border-dark px-5 py-3' onSubmit={handleRegister}>
+            <form onSubmit={handleRegister} className='w-50 mx-auto mt-5 border border-dark px-5 py-3'>
                 <h3 className='text-center fw-bold fst-italic'>Register
                 </h3>
                 <div className="mb-3">
@@ -94,14 +46,14 @@ const Register = () => {
                     </button>
                 </div>
                 <div className="mb-3 text-center">
-                    <p>Already have an account? <Link to='/login' className='text-dark text-decoration-none' onClick={navigateLogin}>Login</Link></p>
+                    <p>Already have an account? <Link to='/login' className='text-dark text-decoration-none'>Login</Link></p>
                 </div>
-                {
+                {/* {
                     error && <p className='text-danger'>{error.message}</p>
                 }
                 {
                     user && <p className='text-success'>User created successfully!</p>
-                }
+                } */}
             </form>
             </div>
         </div>
