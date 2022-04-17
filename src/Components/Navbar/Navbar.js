@@ -30,7 +30,7 @@ const Navbar = () => {
                         <CustomLink className="text-light nav-link" to='/cart'>Checkout</CustomLink>
                     </span>
                     <span className="navbar-text">
-                    <Link className="nav-link bg-light text-dark" to='/login'>Login</Link>
+                    <Link className="nav-link bg-light text-dark" to='/register'>Login</Link>
                     </span>
                     </div>
                 </div>

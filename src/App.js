@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home/Home';
 import Services from './Components/Services/Services';
 import Footer from './Components/Footer/Footer';
-import Register from './Components/Register/Register';
+import Register from './Components/Register/Register/Register';
 import RequireAuth from './RequireAuth/RequireAuth';
 import Checkout from './Components/Checkout/Checkout';
 
@@ -23,7 +23,7 @@ function App() {
             <Checkout></Checkout>
           </RequireAuth>
         }></Route>
-        <Route path='/login' element={<Register></Register>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/*' element={<p>not found</p>}></Route>
       </Routes>
       <Footer></Footer>
