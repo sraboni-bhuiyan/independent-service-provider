@@ -4,9 +4,8 @@ import Navbar from './Components/Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home/Home';
 import Services from './Components/Services/Services';
-import Footer from './Components/Footer/Footer';
 import Register from './Components/Register/Register/Register';
-import RequireAuth from './RequireAuth/RequireAuth';
+import RequireAuth from './Components/Register/RequireAuth/RequireAuth';
 import Checkout from './Components/Checkout/Checkout';
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/*' element={<p>not found</p>}></Route>
       </Routes>
-      <Footer></Footer>
     </div>
   );
 }
