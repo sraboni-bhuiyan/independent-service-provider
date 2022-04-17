@@ -1,8 +1,18 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import CustomLink from '../../CustomLink/CustomLink';
+import auth from '../../Firebase/Firebase.init';
 
 const Navbar = () => {
+
+    const [user] = useAuthState(auth);
+
+    const handleSignout = ()=>{
+        signOut(auth);
+    }
+
     return (
         <div className='sticky-top'>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -27,10 +37,15 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <span className="mx-2">
-                        <CustomLink className="text-light nav-link" to='/cart'>Checkout</CustomLink>
+                        <CustomLink className="text-light nav-link" to='/checkout'>Checkout</CustomLink>
                     </span>
                     <span className="navbar-text">
-                    <Link className="nav-link bg-light text-dark" to='/register'>Login</Link>
+                    {
+                        user ?
+                        <button onClick={handleSignout} className="nav-link bg-light text-dark">Sign Out</button>
+                        :
+                        <Link className="nav-link bg-light text-dark" to='/login'>Login</Link>
+                    }
                     </span>
                     </div>
                 </div>

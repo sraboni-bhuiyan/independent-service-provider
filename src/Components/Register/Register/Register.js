@@ -13,12 +13,18 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
+      const navigate = useNavigate();
+      if(user){
+          navigate('/checkout')
+      }
+
     const handleRegister = event =>{
         event.preventDefault();
-        const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPassword.value;
+
+        createUserWithEmailAndPassword(email, password)
     }
 
     return (
@@ -48,12 +54,12 @@ const Register = () => {
                 <div className="mb-3 text-center">
                     <p>Already have an account? <Link to='/login' className='text-dark text-decoration-none'>Login</Link></p>
                 </div>
-                {/* {
+                 {
                     error && <p className='text-danger'>{error.message}</p>
                 }
                 {
                     user && <p className='text-success'>User created successfully!</p>
-                } */}
+                }
             </form>
             </div>
         </div>
