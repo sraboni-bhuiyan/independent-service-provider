@@ -48,7 +48,7 @@ const Register = () => {
                 
                 
                 <div className='mb-3 w-75 mx-auto'>
-                    <button type="submit" className="btn btn-dark w-100 py-3 rounded-pill">Register
+                    <button type="submit" className="btn btn-outline-dark w-100 py-3 rounded-pill">Register
                     </button>
                 </div>
                 <div className="mb-3 text-center">
