@@ -26,6 +26,9 @@ const Navbar = () => {
                         <CustomLink className="nav-link" to='/aboutme'>About Me</CustomLink>
                         </li>
                     </ul>
+                    <span className="mx-2">
+                        <CustomLink className="text-light nav-link" to='/cart'>Cart</CustomLink>
+                    </span>
                     <span className="navbar-text">
                     <Link className="nav-link bg-light text-dark" to='/login'>Login</Link>
                     </span>
