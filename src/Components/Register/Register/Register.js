@@ -5,6 +5,8 @@ import auth from '../../../Firebase/Firebase.init';
 
 const Register = () => {
 
+    const [confirmError, setConfirmError] = useState('');
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -22,6 +24,12 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPassword.value;
+
+        if(password !== confirmPassword){
+            setConfirmError('Both passwords should match!')
+            return;
+        }
+        setConfirmError('')
 
         createUserWithEmailAndPassword(email, password)
     }
@@ -45,6 +53,7 @@ const Register = () => {
                     <input type="password" name='confirmPassword' className="form-control" id="exampleInputPassword2" required/>
                 </div>
                 
+                <p className='text-danger'>{confirmError}</p>
                 
                 <div className='mb-3 w-75 mx-auto'>
                     <button type="submit" className="btn btn-outline-dark w-100 py-3 rounded-pill">Register
