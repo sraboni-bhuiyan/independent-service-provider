@@ -14,8 +14,8 @@ const ServicePreview = () => {
 
     return (
         <div className='container mt-5'>
-            <h3 className='text-center fw-bold fst-italic'>My Coaching Services</h3>
-            <div className='row mt-5 g-4'>
+            <h3 className='text-center fw-bold fst-italic mt-5'>My Coaching Services</h3>
+            <div className='row mt-2 g-4'>
                 {
                     services.slice(0,3).map(service => <SingleService
                         key={service.id}
