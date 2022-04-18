@@ -9,7 +9,7 @@ const SuccessStory = () => {
     };
 
     return (
-        <div className='container w-75 mx-auto my-5'>
+        <div className='container w-lg-75 w-sm-50 mx-auto my-5'>
             <h3 className='mb-5 text-center fw-bold fst-italic'>Success Stories</h3>
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 <Carousel.Item>
@@ -44,7 +44,7 @@ const SuccessStory = () => {
 
                     <Carousel.Caption className='bg-dark w-50 mx-auto rounded-3'>
                     <h3>Jessica Rogario</h3>
-                    <p>She was one of my favourites. Jessica is very strong-minded and hardworking. After a sudden accident, she lost her confidence to start over. I found her through her instagram, reached out to her and she agreed to take a class with me. I am so lucky that i managed to recover her trust and confidence about her capabilities. She is now working as a Business Analyst in GoldMann Sach.</p>
+                    <p>She was one of my favourites. Jessica is very strong-minded and hardworking. I am so lucky that i managed to recover her trust and confidence about her capabilities. She is now working as a Business Analyst in GoldMann Sach.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
