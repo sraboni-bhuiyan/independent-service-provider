@@ -33,7 +33,7 @@ const Navbar = () => {
                         <CustomLink className="nav-link" to='/blog'>Blog</CustomLink>
                         </li>
                         <li className="nav-item mx-2">
-                        <CustomLink className="nav-link" to='/aboutme'>About Me</CustomLink>
+                        <CustomLink className="nav-link" to='/about'>About Me</CustomLink>
                         </li>
                     </ul>
                     <span className="mx-2">
