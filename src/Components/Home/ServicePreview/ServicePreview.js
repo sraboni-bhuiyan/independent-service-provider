@@ -25,7 +25,7 @@ const ServicePreview = () => {
                 }
             </div>
             <div className='text-center'>
-                <Link to='/services' className='btn btn-dark'>Load More...</Link>
+                <Link to='/services' className='btn btn-outline-dark'>Load More...</Link>
             </div>
         </div>
     );

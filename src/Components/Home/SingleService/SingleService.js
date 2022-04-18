@@ -7,7 +7,7 @@ const singleService = ({service}) => {
 
     return (
         <div className='col-lg-4 col-md-6 col-sm-12 py-4'>
-            <div className="card bg-secondary text-white text-center shadow-lg">
+            <div className="card bg-secondary text-white text-center shadow-lg ">
                 <img src={image} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title fst-italic">{name}</h5>

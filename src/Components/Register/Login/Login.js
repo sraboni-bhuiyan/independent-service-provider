@@ -1,4 +1,3 @@
-import { async } from '@firebase/util';
 import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -42,8 +41,13 @@ const Login = () => {
 
     const resetPassword = async() =>{
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        toast('Sent email');
+        if(email){
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else{
+            toast('Please enter email address!')
+        }
     }
 
 
